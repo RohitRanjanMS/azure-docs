@@ -40,7 +40,10 @@ Azure Functions integrates with Azure Monitor Logs to monitor functions. For det
 
 :::image type="content" source="media/monitor-functions/choose-table.png" alt-text="Screenshot of adding a diagnostic setting for Azure Functions.":::
 
-For the available resource log categories, their associated Log Analytics tables, and the logs schemas for Azure Functions, see [Azure Functions monitoring data reference](monitor-functions-reference.md#resource-logs).
+For the available resource log categories, limit the size of the their associated Log Analytics tables, and the logs schemas for Azure Functions, see [Azure Functions monitoring data reference](monitor-functions-reference.md#resource-logs).
+
+>[!NOTE]  
+>Telemetry is processed in batches. Depending on the batch size, entries may be dropped if the payload is excessively large or contains unescaped special characters. To avoid data loss, limit the size of logs—particularly when capturing large XML or JSON payloads—to 10,000 characters, and ensure that special characters are properly escaped.
 
 [!INCLUDE [horz-monitor-activity-log](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-activity-log.md)]
 
